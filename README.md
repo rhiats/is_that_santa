@@ -1,2 +1,3 @@
-# is_that_santa
+# Is that Santa
+
 Identify Santa Clause in images
