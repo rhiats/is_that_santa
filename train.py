@@ -1,4 +1,5 @@
 from tensorflow.keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.applications import MobileNetV3Large
 
 img_size = (224, 224)
 batch_size = 32
@@ -32,3 +33,18 @@ validation_generator = val_datagen.flow_from_directory(
     subset="validation"
 )
 
+
+print("Training samples:", train_generator.samples)
+print("Validation samples:", validation_generator.samples)
+
+
+"""
+base_model = tf.keras.applications.MobileNetV3Large(
+    input_shape=(224, 224, 3),
+    include_top=False,
+    weights="imagenet"
+)
+
+base_model.trainable = False   # freeze pretrained layers
+
+"""
